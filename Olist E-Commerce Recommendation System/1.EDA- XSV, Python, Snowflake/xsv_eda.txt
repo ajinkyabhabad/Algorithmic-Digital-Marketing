@@ -1,0 +1,134 @@
+(project) sanket@sanket:~/project$ cd olist
+(project) sanket@sanket:~/project/olist$ xsv headers olist_customers_dataset.csv
+1   customer_id
+2   customer_unique_id
+3   customer_zip_code_prefix
+4   customer_city
+5   customer_state
+(project) sanket@sanket:~/project/olist$ xsv stats olist_customers_dataset.csv --everything | xsv table
+field                     type     sum         min                               max                               min_length  max_length  mean                stddev              median  mode                              cardinality
+customer_id               Unicode              00012a2ce6f8dcda20d059ce98491703  ffffe8b65bbe3087b653a978c870db99  32          32                                                          N/A                               99441
+customer_unique_id        Unicode              0000366f3b9a7992bf8c76cfdf3221e2  ffffd2657e2aad2907e67c3e9daecbeb  32          32                                                          8d50f5eadf50201ccdcedfb9e2ac8455  96096
+customer_zip_code_prefix  Integer  3494105610  1003                              99990                             5           5           35137.474582917785  29797.789168600164  24416   22790                             14994
+customer_city             Unicode              abadia dos dourados               zortea                            3           32                                                          sao paulo                         4119
+customer_state            Unicode              AC                                TO                                2           2                                                           SP                                27
+(project) sanket@sanket:~/project/olist$ xsv headers olist_geolocation_dataset.csv
+1   geolocation_zip_code_prefix
+2   geolocation_lat
+3   geolocation_lng
+4   geolocation_city
+5   geolocation_state
+(project) sanket@sanket:~/project/olist$ xsv stats olist_geolocation_dataset.csv --everything | xsv table
+field                        type     sum                  min                  max                 min_length  max_length  mean                stddev             median               mode                 cardinality
+geolocation_zip_code_prefix  Integer  36580128055          1001                 99990               5           5           36574.1664658658    30549.32043813699  26530                24220                19015
+geolocation_lat              Float    -21179604.623307496  -36.6053744107061    45.06593318269697   7           23          -21.1761529103839   5.715863451355097  -22.91937749486411   -27.102098999999946  717372
+geolocation_lng              Float    -46398102.979171306  -101.46676644931476  121.10539381057764  7           19          -46.39054132093449  4.26974617209304   -46.637878669601484  -48.62961349999995   717615
+geolocation_city             Unicode                       * cidade             óleo                2           38                                                                      sao paulo            8011
+geolocation_state            Unicode                       AC                   TO                  2           2                                                                       SP                   27
+(project) sanket@sanket:~/project/olist$ xsv headers olist_order_items_dataset.csv
+1   order_id
+2   order_item_id
+3   product_id
+4   seller_id
+5   shipping_limit_date
+6   price
+7   freight_value
+(project) sanket@sanket:~/project/olist$ xsv stats olist_order_items_dataset.csv --everything | xsv table
+field                type     sum                min                               max                               min_length  max_length  mean                stddev              median  mode                              cardinality
+order_id             Unicode                     00010242fe8c5a6d1ba2dd792cb16214  fffe41c64501cc87c801fd61db3f6244  32          32                                                          8272b63d03f5f79c56e9e4120aec44ef  98666
+order_item_id        Integer  134936             1                                 21                                1           2           1.1978339991122995  0.7051209016765825  1       1                                 21
+product_id           Unicode                     00066f42aeeb9f3007548bb9d3f33c38  fffe9eeff12fcbd74a2f2b007dde0c58  32          32                                                          aca2eb7d00ea1a7b8ebd4e68314663af  32951
+seller_id            Unicode                     0015a82c2db000af6aaaf3ae2ecb0532  ffff564a4f9085cd26170f4732393726  32          32                                                          6560211a19b47992c3666cc44a7e94c0  3095
+shipping_limit_date  Unicode                     2016-09-19 00:15:34               2020-04-09 22:35:08               19          19                                                          2018-06-13 17:30:35               93318
+price                Float    13591643.70001419  0.85                              6735                              4           7           120.65373901464766  183.63311298441317  74.99   59.90                             5968
+freight_value        Float    2251909.54000023   0                                 409.68                            4           6           19.990319928983507  15.806335254993447  16.26   15.10                             6999
+(project) sanket@sanket:~/project/olist$ xsv headers olist_order_payments_dataset.csv
+1   order_id
+2   payment_sequential
+3   payment_type
+4   payment_installments
+5   payment_value
+(project) sanket@sanket:~/project/olist$ xsv stats olist_order_payments_dataset.csv --everything | xsv table
+field                 type     sum                 min                               max                               min_length  max_length  mean                stddev              median  mode                              cardinality
+order_id              Unicode                      00010242fe8c5a6d1ba2dd792cb16214  fffe41c64501cc87c801fd61db3f6244  32          32                                                          fa65dad1b0e818e3ccc5cb0e39231352  99440
+payment_sequential    Integer  113514              1                                 29                                1           2           1.0926785129854024  0.7065803784216526  1       1                                 29
+payment_type          Unicode                      boleto                            voucher                           6           11                                                          credit_card                       5
+payment_installments  Integer  296423              0                                 24                                1           2           2.853348863176934   2.6870377411362902  1       1                                 24
+payment_value         Float    16008872.119998764  0                                 13664.08                          4           8           154.10038041699545  217.493017070222    100     50.00                             29077
+(project) sanket@sanket:~/project/olist$ xsv headers olist_order_reviews_dataset.csv
+1   review_id
+2   order_id
+3   review_score
+4   review_comment_title
+5   review_comment_message
+6   review_creation_date
+7   review_answer_timestamp
+(project) sanket@sanket:~/project/olist$ xsv stats olist_order_reviews_dataset.csv --everything | xsv table
+field                                   type     sum     min                               max                               min_length  max_length  mean               stddev              median  mode                              cardinality
+review_id                               Unicode          0001239bc1de2e33cb583967c2ca4c67  fffefe7a48d22f7b32046421062219d1  32          32                                                         f4bb9d6dd4fb6dcc2298f0e7b17b8e1e  98410
+order_id                                Unicode          00010242fe8c5a6d1ba2dd792cb16214  fffe41c64501cc87c801fd61db3f6244  32          32                                                         N/A                               98673
+review_score                            Integer  405471  1                                 5                                 1           1           4.086420624042637  1.3475723405073519  5       5                                 5
+review_comment_title                    Unicode                                            🔟                                0           35                                                                                           4528
+review_comment_message                  Unicode          "
+"                                       "😡😡😡😡😡👎👎👎👎👎
+Empresa sem compromisso com o cliente"  0        269                                                    36160
+review_creation_date                    Unicode       2016-10-02 00:00:00  2018-08-31 00:00:00  19  19              2017-12-19 00:00:00  636
+review_answer_timestamp                 Unicode       2016-10-07 18:32:28  2018-10-29 12:27:35  19  19              2017-06-15 23:21:05  98248
+(project) sanket@sanket:~/project/olist$ xsv headers olist_orders_dataset.csv
+1   order_id
+2   customer_id
+3   order_status
+4   order_purchase_timestamp
+5   order_approved_at
+6   order_delivered_carrier_date
+7   order_delivered_customer_date
+8   order_estimated_delivery_date
+(project) sanket@sanket:~/project/olist$ xsv stats olist_orders_dataset.csv --everything | xsv table
+field                          type     sum  min                               max                               min_length  max_length  mean  stddev  median  mode                 cardinality
+order_id                       Unicode       00010242fe8c5a6d1ba2dd792cb16214  fffe41c64501cc87c801fd61db3f6244  32          32                                N/A                  99441
+customer_id                    Unicode       00012a2ce6f8dcda20d059ce98491703  ffffe8b65bbe3087b653a978c870db99  32          32                                N/A                  99441
+order_status                   Unicode       approved                          unavailable                       7           11                                delivered            8
+order_purchase_timestamp       Unicode       2016-09-04 21:15:19               2018-10-17 17:30:18               19          19                                2018-08-22 18:03:39  98875
+order_approved_at              Unicode       2016-09-15 12:16:38               2018-09-03 17:40:06               0           19                                                     90734
+order_delivered_carrier_date   Unicode       2016-10-08 10:34:01               2018-09-11 19:48:28               0           19                                                     81019
+order_delivered_customer_date  Unicode       2016-10-11 13:46:32               2018-10-17 13:22:46               0           19                                                     95665
+order_estimated_delivery_date  Unicode       2016-09-30 00:00:00               2018-11-12 00:00:00               19          19                                2017-12-20 00:00:00  459
+(project) sanket@sanket:~/project/olist$ xsv headers olist_products_dataset.csv
+1   product_id
+2   product_category_name
+3   product_name_lenght
+4   product_description_lenght
+5   product_photos_qty
+6   product_weight_g
+7   product_length_cm
+8   product_height_cm
+9   product_width_cm
+(project) sanket@sanket:~/project/olist$ xsv stats olist_products_dataset.csv --everything | xsv table
+field                       type     sum       min                               max                               min_length  max_length  mean                stddev              median  mode             cardinality
+product_id                  Unicode            00066f42aeeb9f3007548bb9d3f33c38  fffe9eeff12fcbd74a2f2b007dde0c58  32          32                                                          N/A              32951
+product_category_name       Unicode            agro_industria_e_comercio         utilidades_domesticas             0           46                                                          cama_mesa_banho  74
+product_name_lenght         Integer  1567793   5                                 76                                0           2           48.47694876472587   10.24558232228241   51      60               67
+product_description_lenght  Integer  24950929  4                                 3992                              0           4           771.4952846232277   635.1054055178237   595                      2961
+product_photos_qty          Integer  70794     1                                 20                                0           2           2.188986116693969   1.7367387868900839  1       1                20
+product_weight_g            Integer  75007492  0                                 40425                             0           5           2276.4724877841613  4281.973750685934   700     200              2205
+product_length_cm           Integer  1015326   7                                 105                               0           3           30.815077847582856  16.914201375769256  25      16               100
+product_height_cm           Integer  558079    2                                 105                               0           3           16.93766123402828   13.637347110741404  13      10               103
+product_width_cm            Integer  764309    6                                 118                               0           3           23.19672827703417   12.078864152686027  20      11               96
+(project) sanket@sanket:~/project/olist$ xsv headers olist_sellers_dataset.csv
+1   seller_id
+2   seller_zip_code_prefix
+3   seller_city
+4   seller_state
+(project) sanket@sanket:~/project/olist$ xsv stats olist_sellers_dataset.csv --everything | xsv table
+field                   type     sum       min                               max                               min_length  max_length  mean                stddev              median  mode       cardinality
+seller_id               Unicode            0015a82c2db000af6aaaf3ae2ecb0532  ffff564a4f9085cd26170f4732393726  32          32                                                          N/A        3095
+seller_zip_code_prefix  Integer  99940829  1001                              99730                             5           5           32291.059450726927  32708.168515017875  14940   14940      2246
+seller_city             Unicode            04482255                          xaxim                             2           40                                                          sao paulo  611
+seller_state            Unicode            AC                                SP                                2           2                                                           SP         23
+(project) sanket@sanket:~/project/olist$ xsv headers product_category_name_translation.csv
+1   product_category_name
+2   product_category_name_english
+(project) sanket@sanket:~/project/olist$ xsv stats product_category_name_translation.csv --everything | xsv table
+field                          type     sum  min                         max                    min_length  max_length  mean  stddev  median  mode  cardinality
+product_category_name          Unicode       agro_industria_e_comercio   utilidades_domesticas  3           46                                N/A   71
+product_category_name_english  Unicode       agro_industry_and_commerce  watches_gifts          3           39                                N/A   71
