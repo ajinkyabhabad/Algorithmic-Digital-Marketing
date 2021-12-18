@@ -66,18 +66,18 @@ def main():
 		Recommendations = Recommendations.reset_index()
 		return Recommendations
 	
-	Olist_db_obj = s3.get_object(Bucket = 'olist' , Key = 'best.csv')
+	Olist_db_obj = s3.get_object(Bucket = 'olist-1' , Key = 'best.csv')
 	Olist_db_body=pass_obj['Body']
 	Olist_db_csv_string = pass_body.read().decode('utf-8')
 	Olist_db=pd.read_csv(StringIO(Olist_db_csv_string))
 	
 	
-	Olist_db__obj = s3.get_object(Bucket = 'olist' , Key = 'Olist_db_ALS.csv')
+	Olist_db__obj = s3.get_object(Bucket = 'olist-1' , Key = 'Olist_db_ALS.csv')
 	Olist_db__body=pass_obj['Body']
 	Olist_db__csv_string = pass_body.read().decode('utf-8')
 	Olist_db_ = pd.read_csv(Olist_db__csv_string)
 	
-	X_obj = s3.get_object(Bucket = 'olist' , Key = 'X_ALS.csv')
+	X_obj = s3.get_object(Bucket = 'olist-1' , Key = 'X_ALS.csv')
 	X_body=pass_obj['Body']
 	X_csv_string = pass_body.read().decode('utf-8')
 	X = pd.read_csv(X_csv_string, index_col=0)
@@ -86,7 +86,7 @@ def main():
 		correlation_matrix = json.load(f)
 	correlation_matrix = np.array(correlation_matrix)
 
-	Olist_Reg_db_obj = s3.get_object(Bucket = 'olist' , Key = 'Regular.csv')
+	Olist_Reg_db_obj = s3.get_object(Bucket = 'olist-1' , Key = 'Regular.csv')
 	Olist_Reg_db_body=pass_obj['Body']
 	Olist_Reg_db_csv_string = pass_body.read().decode('utf-8')
 	Olist_Reg_db = pd.read_csv(Olist_Reg_db_csv_string)
@@ -94,12 +94,12 @@ def main():
 	with open('correlation_matrix_ALS_Reg.txt') as g:
 		correlation_matrix_Reg = json.load(g)
 	
-	Olist_Reg_db__obj = s3.get_object(Bucket = 'olist' , Key = 'Olist_Reg_db_ALS.csv')
+	Olist_Reg_db__obj = s3.get_object(Bucket = 'olist-1' , Key = 'Olist_Reg_db_ALS.csv')
 	Olist_Reg_db__body=pass_obj['Body']
 	Olist_Reg_db__csv_string = pass_body.read().decode('utf-8')	
 	Olist_Reg_db_ = pd.read_csv(Olist_Reg_db__csv_string)
 	
-	X_Reg_obj = s3.get_object(Bucket = 'olist' , Key = 'X_ALS_Reg.csv')
+	X_Reg_obj = s3.get_object(Bucket = 'olist-1' , Key = 'X_ALS_Reg.csv')
 	X_Reg_body=pass_obj['Body']
 	X_Reg_csv_string = pass_body.read().decode('utf-8')
 	X_Reg = pd.read_csv(X_Reg_csv_string, index_col=0)
@@ -139,12 +139,12 @@ def main():
 
 	st.markdown(page_bg_img, unsafe_allow_html=True)
 
-	pass_data_obj = s3.get_object(Bucket = 'olist' , Key = 'Passwords.csv')
+	pass_data_obj = s3.get_object(Bucket = 'olist-1' , Key = 'Passwords.csv')
 	pass_data_body=pass_obj['Body']
 	pass_data_csv_string = pass_body.read().decode('utf-8')	
 	pass_data = pd.read_csv(pass_data_csv_string)
 	
-	popular_obj = s3.get_object(Bucket = 'olist' , Key = 'df_popular.csv')
+	popular_obj = s3.get_object(Bucket = 'olist-1' , Key = 'df_popular.csv')
 	popular_body=pass_obj['Body']
 	popular_csv_string = pass_body.read().decode('utf-8')	
 	popular= pd.read_csv(popular_csv_string)
