@@ -1,7 +1,10 @@
 # Olist E-Commerce Recommendation System
 Course: INFO7374 Algorithmic Digital Marketing
+
 Professor: Sri Krishnamurthy
+
 Team: 7
+
 Members: Ajinkya Sanjay Bhabad, Sanket Vasant Bhosale
 
 Project Proposal Link: https://tinyurl.com/OlistProjectProposal
