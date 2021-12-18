@@ -10,7 +10,11 @@ Final Project Presentation Link: https://tinyurl.com/OlistProjectPresentation
 
 Project Workflow: https://tinyurl.com/OlistWorkflow
 
-Tableau Dashborads: 
+Customer Analytics Dashboard: https://tinyurl.com/olist-cutomer-analytics
+
+Geographical Analytics Dashboard: https://tinyurl.com/olist-geographical
+
+Customer Segmentation Dashboard: https://tinyurl.com/olist-customer-segmentation
 
 Olist Recommendation Webapp: https://olist-recommendation-system.herokuapp.com/
 
@@ -18,7 +22,7 @@ Instructions for using the WebApp :
 1. Use the HomePage for getting basic information 
 2. From the left hand selection window, select Login option
 3. Use the usernames and passwords mentioned below to get personalised recommendations
-4. Slect the New customer option to get the popular products recommendation and also to sort products based on Price(High to Low, Low to High)
+4. Select the New customer option to get the popular products recommendation and also to sort products based on Price(High to Low, Low to High)
 
 Username and Password to login for personalised recommendations for Referene:
 
