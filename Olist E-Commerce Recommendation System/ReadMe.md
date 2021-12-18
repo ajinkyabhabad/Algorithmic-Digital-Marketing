@@ -6,7 +6,7 @@ Members: Ajinkya Sanjay Bhabad, Sanket Vasant Bhosale
 
 Project Proposal Link: https://tinyurl.com/OlistProjectProposal
 
-Project Presentation Link: https://tinyurl.com/OlistProjectPresentation
+Final Project Presentation Link: https://tinyurl.com/OlistProjectPresentation
 
 Project Workflow: https://tinyurl.com/OlistWorkflow
 
