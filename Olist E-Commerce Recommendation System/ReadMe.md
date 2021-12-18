@@ -11,6 +11,8 @@ Project Proposal Link: https://tinyurl.com/OlistProjectProposal
 
 Final Project Link: https://tinyurl.com/OlistProjectPresentation
 
+YouTube Video Link: https://youtu.be/YBVkNf7q-e8
+
 Project Workflow: https://tinyurl.com/OlistWorkflow
 
 Customer Analytics Dashboard: https://tinyurl.com/olist-cutomer-analytics
